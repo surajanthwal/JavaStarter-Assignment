@@ -1,10 +1,8 @@
 package suraj;
 
-import java.util.Scanner;
-
 final public class Zdigit {
 	final private char ch;
-	
+
 	public char getCh() {
 		return ch;
 	}
@@ -18,14 +16,16 @@ final public class Zdigit {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Enter an aplhabet ");
-		Scanner s = new Scanner(System.in);
-		char c = s.next().charAt(0);
-		Zdigit z = new Zdigit(c);
-Znumber zn=new Znumber('A','0');
-Znumber zn1=new Znumber("ABHJIK");	
-Znumber zn2=new Znumber(['A','C','K']);
-System.out.println(zn);
-	zn.toDecimal();
+
+		Znumber zn = new Znumber('A', '0', 'E');
+		Znumber zn1 = new Znumber("ABHJIK");
+		Znumber zn2 = new Znumber(new char[] { 'A', 'C', 'K' });
+		System.out.println("The String is " + zn);
+		System.out.println(" The conversion is " + zn.toDecimal());
+		System.out.println("The String is " + zn1);
+		System.out.println(" The conversion is " + zn1.toDecimal());
+		System.out.println("The String is " + zn2);
+		System.out.println(" The conversion is " + zn2.toDecimal());
+
 	}
 }
