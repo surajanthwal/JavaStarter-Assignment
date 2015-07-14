@@ -17,13 +17,6 @@ final public class Znumber{
 	}
 
 	
-public Znumber(char[] charArray){
-	array=new Zdigit[charArray.length];
-	for(int i=0;i<charArray.length;i++)
-		array[i]=new Zdigit(charArray[i]);
-	
-}
-	@Override
 	public String toString() {
 		StringBuffer str = new StringBuffer();
 		for (Zdigit z : array) {
@@ -32,16 +25,15 @@ public Znumber(char[] charArray){
 		return str.toString();
 	}
 
-	public void toDecimal() {
-		int l, i = 0;
+	public long toDecimal() {
 		long conv = 0;
-		for (l = array.length - 1; l >= 0; l--) {
+		for (int l = array.length - 1; l >= 0; l--) {
 			conv += (Math.pow(27, array.length - 1 - l)) * (array[l].getCh() == '0' ? 0 : (int) array[l].getCh() - 64);
 		}
-		System.out.println(conv);
+		return conv;
 	}
 	public Zdigit[] getDigits(){
-				return array;
+		return array;
 	}
 
 }
